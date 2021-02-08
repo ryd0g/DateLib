@@ -2,46 +2,91 @@ class D {
   constructor(...args) {
     this._date = new Date(...args);
   }
-  // getter for full year
+  /**
+   * method to get the year
+   * @param {number} input the year
+   * @returns {number} the year in string format
+   */
   get year() {
     return this._date.getFullYear();
   }
-  // getter for short year
+  /**
+   * method to get the shorter year
+   * @param {number} input the year
+   * @returns {number} the year in 2 digit format(ex: 2021 = 21)
+   */
   get yr() {
     return this._date.getFullYear().toString().substr(0, 3);
   }
-  // getter for month
+  /**
+   * method to get the month
+   * @param {number} input the month
+   * @returns {string} the month in string format
+   */
   get month() {
     return this._date.getMonth();
   }
-  // getter for short month
+  /**
+   * method to get the shorter month
+   * @param {number} input the month
+   * @returns {string} the month in 3 letter form(ex: jan)
+   */
   get mon() {
     return this._date.getMonth().toString().substr(0, 3);
   }
-  // getter for day
+  /**
+   * method to get the day
+   * @param {number} input the day
+   * @returns {string} the day in string format
+   */
   get day() {
     return this._date.getDay();
   }
-  // getter for short day
+  /**
+   * method to get the shorter day
+   * @param {number} input the day
+   * @returns {string} the day in 3 letter format(ex: mon, tue)
+   */
   get dy() {
     return this._date.getDay().toString().substr(0, 3);
   }
-  // getter for date
+  /**
+   * method to get the date
+   * @param {number} input the date
+   * @returns {number} the date in number format
+   */
   get date() {
     return this._date.getDate();
   }
-  // getter for hours
+  /**
+   * method to get the hour
+   * @param {number} input the date as normal
+   * @returns {number} the hour of the time in utc
+   */
   get hours() {
     return this._date.getHours();
   }
-  // getter for minutes
+  /**
+   * method to get the minutes
+   * @param {number} input the date as normal
+   * @returns {number} the minutes of the time in utc
+   */
   get mins() {
     return this._date.getMinutes();
   }
-  // getter for seconds
+  /**
+   * method to get the seconds
+   * @param {number} input the date as normal
+   * @returns {number} the seconds of the time in utc
+   */
   get secs() {
     return this._date.getSeconds();
   }
+  /**
+   * method to format the dates when entered
+   * @param {number} input the date as normal
+   * @returns {string} the date formatted
+   */
   format(mask = 'Y M D') {
     var zero = function (val) {
       return val <= 9 ? '0' + val : '' + val;
@@ -78,6 +123,11 @@ class D {
     });
     return space;
   }
+  /**
+   * method to see how far a given date is from the current date
+   * @param {number} input the date as normal
+   * @returns {string} the length of years, months, or days of the given date from today
+   */
   when() {
     const now = new D();
     const ny = this.year - now.year;
