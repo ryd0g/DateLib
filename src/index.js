@@ -102,7 +102,5 @@ class D {
     }
   }
 }
-const d = new D();
-console.log(d.when()); // 6 months ago
 
 module.exports = D;
