@@ -1,3 +1,42 @@
+const month = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+const monthshort = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+];
+const day = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday',
+];
+const dayshort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
 class D {
   constructor(...args) {
     this._date = new Date(...args);
@@ -16,7 +55,7 @@ class D {
    * @returns {number} the year in 2 digit format(ex: 2021 = 21)
    */
   get yr() {
-    return this._date.getFullYear().toString().substr(0, 3);
+    return this._date.getFullYear().toString().substr(-2);
   }
   /**
    * method to get the month
@@ -24,7 +63,7 @@ class D {
    * @returns {string} the month in string format
    */
   get month() {
-    return this._date.getMonth();
+    return month[this._date.getMonth()];
   }
   /**
    * method to get the shorter month
@@ -32,7 +71,7 @@ class D {
    * @returns {string} the month in 3 letter form(ex: jan)
    */
   get mon() {
-    return this._date.getMonth().toString().substr(0, 3);
+    return monthshort[this._date.getMonth().toString().substr(0, 3)];
   }
   /**
    * method to get the day
@@ -40,7 +79,7 @@ class D {
    * @returns {string} the day in string format
    */
   get day() {
-    return this._date.getDay();
+    return day[this._date.getDay()];
   }
   /**
    * method to get the shorter day
@@ -48,7 +87,7 @@ class D {
    * @returns {string} the day in 3 letter format(ex: mon, tue)
    */
   get dy() {
-    return this._date.getDay().toString().substr(0, 3);
+    return dayshort[this._date.getDay().toString().substr(0, 3)];
   }
   /**
    * method to get the date
@@ -153,4 +192,6 @@ class D {
   }
 }
 
+const x = new D();
+console.log(x.year);
 module.exports = D;
