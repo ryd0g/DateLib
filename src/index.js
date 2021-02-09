@@ -192,6 +192,4 @@ class D {
   }
 }
 
-const x = new D();
-console.log(x.year);
 module.exports = D;
