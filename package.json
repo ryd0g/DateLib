@@ -1,9 +1,15 @@
 {
   "name": "ryd0g-date-lib",
   "version": "1.1.0",
-  "main": "index.js",
+  "main": "umd/date-lib.js",
+  "module": "esm/index.js",
+  "files": [
+    "esm/*",
+    "umd/*"
+  ],
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "rollup --config"
   },
   "repository": {
     "type": "git",
@@ -21,6 +27,8 @@
   },
   "description": "",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "rollup": "^2.39.0",
+    "rollup-plugin-terser": "^7.0.2"
   }
 }
