@@ -1,6 +1,6 @@
 {
   "name": "ryd0g-date-lib",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "main": "umd/date-lib.js",
   "module": "esm/index.js",
   "files": [
